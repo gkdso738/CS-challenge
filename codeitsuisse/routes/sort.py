@@ -10,4 +10,5 @@ logger = logging.getLogger(__name__)
 @app.route('/sort', methods=['POST'])
 def evaluate_sort():
     data = request.get_json();
-    return jsonify(data.sort());
+    data.sort()
+    return jsonify(data);
