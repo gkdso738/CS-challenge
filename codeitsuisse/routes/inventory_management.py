@@ -42,7 +42,7 @@ def cmp(s,t):
             ans = t[y] + ans
             x -= 1
             y -= 1
-    return distance, ans
+    return distance, t, ans
 
 def solve(target, a):
     ans = []
@@ -64,7 +64,7 @@ def evaluate_inventory_management():
         result = {"searchItemName": target, "searchResult": []}
         temp = solve(target.lower(), a)
         for i in range(len(temp)):
-          result["searchResult"].append(temp[i][1])
+          result["searchResult"].append(temp[i][2])
         result_list.append(result)
     logging.info("My result :{}".format(result_list))
     return jsonify(result_list);
