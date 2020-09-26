@@ -55,5 +55,5 @@ def evaluate_cluster():
     gr = data
     result = get_ans()
     
-    # logging.info("My result :{}".format(result))
+    logging.info("My result :{}".format(result))
     return jsonify({"answer": result});
