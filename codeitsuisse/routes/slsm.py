@@ -60,7 +60,7 @@ def build(n, jumps):
                 mp[x] = x+6
             else:
                 mp[x] = y
-    for i in range(n):
+    for i in range(n+1):
         if i not in kw:
             mp[i] = i
     for i in range(n+1,n+6):
