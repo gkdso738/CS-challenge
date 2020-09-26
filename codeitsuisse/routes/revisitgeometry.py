@@ -24,8 +24,8 @@ def solve(n,a,b,c,cood_x,cood_y):
     ans = []
     for i in range(n):
         x, y = get_intersect(a,b,c,cood_x[i],cood_y[i],cood_x[i+1],cood_y[i+1])
-        if x != np.nan:
-            ans.append({"x": x, "y": y})
+        if x == np.nan or y == np.nan: continue
+        ans.append({"x": x, "y": y})
     return ans
 
 
