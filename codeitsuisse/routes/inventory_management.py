@@ -57,12 +57,14 @@ def solve(target, a):
 def evaluate_inventory_management():
     data = request.get_json();
     logging.info("data sent for evaluation {}".format(data))
-    
-    target = data["searchItemName"]
-    a = data["items"]
-    result = {"searchItemName": target, "searchResult": []}
-    temp = solve(target.lower(), a)
-    for i in range(len(temp)):
-      result["searchResult"].append(temp[i][1])
-    logging.info("My result :{}".format(result))
-    return jsonify(result);
+    result_list = []
+    for subproblem in data:
+        target = subproblem["searchItemName"]
+        a = subproblem["items"]
+        result = {"searchItemName": target, "searchResult": []}
+        temp = solve(target.lower(), a)
+        for i in range(len(temp)):
+          result["searchResult"].append(temp[i][1])
+        result_list.append(result)
+    logging.info("My result :{}".format(result_list))
+    return jsonify(result_list);
