@@ -26,7 +26,7 @@ def compute(A,T,C,G,rnd):
             A -= 2
         ans = ans + "CC"
         C -= 2
-        scopre += 25
+        score += 25
 
     while A > 2 and T > 0:
         ans = ans + "AA"
