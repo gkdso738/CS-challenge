@@ -15,8 +15,7 @@ def evaluate_sort():
         cnt.append(0)
     for element in data:
         cnt[element+10000] += 1
-    ans = []
     for i in range(20001):
         for j in range(cnt[i]):
-            ans.append(i-10000)
+            data[i] = i-10000
     return jsonify(ans);
