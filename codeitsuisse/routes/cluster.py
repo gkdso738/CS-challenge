@@ -28,8 +28,8 @@ def dfs(x, y):
 
 def get_ans():
     global n, m, vis, gr
-    n = len(gr)
-    m = len(gr[0])
+    n = len(gr[0])
+    m = len(gr)
     for i in range(n):
         temp = []
         for j in range(m):
