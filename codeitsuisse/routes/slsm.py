@@ -83,8 +83,8 @@ def build(n, jumps):
             cand = 0
             for i in range(1,7):
                 #if x + i in kw: continue
-                if mp[x+i] > mx:
-                    mx = mp[x+i]
+                if mp[x-i] > mx:
+                    mx = mp[x-i]
                     cand = i
             extra_roll[x] = cand
 
