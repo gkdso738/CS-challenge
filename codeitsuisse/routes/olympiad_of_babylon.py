@@ -30,13 +30,25 @@ def solve(books, days):
 def solve2(books, days):
     books.sort()
     sum = 0
+    ans = -1
     for i in range(len(days)):
         sum += days[i]
     for i in range(len(books)):
         if books[i] > sum:
-            return i
+            ans = i
+            break
         sum -= books[i]
-    return len(books)
+    if ans == -1: ans = len(books)
+    for cand in range(ans, -1, -1):
+        subset = books[:i].reverse()
+        for i in range(len(days)):
+            x = days[i]
+            for j in range(len(subset)):
+                if x >= subset[j]:
+                    subset = subset[:j] + subset[j+1:]
+                    break
+        if subset == []:
+            return cand
 
 @app.route('/olympiad-of-babylon', methods=['POST'])
 def evaluate_salad_spree():
