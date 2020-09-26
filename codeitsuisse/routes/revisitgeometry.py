@@ -9,7 +9,7 @@ from codeitsuisse import app;
 logger = logging.getLogger(__name__)
 
 def get_t(a,b,c,x,y,u,v):
-    if (a*(u-x) + b*(v-y)) < 1e-15: return np.nan
+    if abs((a*(u-x) + b*(v-y))) < 1e-15: return np.nan
     return -(a*x + b*y + c) / (a*(u-x) + b*(v-y))
 
 def get_line(x,y,u,v):
