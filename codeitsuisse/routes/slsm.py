@@ -95,9 +95,6 @@ def build(n, jumps):
     for i in range(n+6):
         if mp[mp[i]] != mp[i]:
             mp[i] = mp[mp[i]]
-    for i in range(n+6):
-        if mp[mp[i]] != mp[i]:
-            mp[i] = mp[mp[i]]
     return mp, extra_roll
 
 @app.route('/slsm', methods=['POST'])
