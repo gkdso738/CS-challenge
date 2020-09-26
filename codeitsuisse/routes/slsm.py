@@ -40,18 +40,6 @@ def solve(n, mp, extra_roll, rnd):
             if extra_roll[tcur+i] != 0:
                 ans.append(extra_roll[tcur+i])
             break
-    while cur < n:
-        mx = -1
-        cand = 0
-        for i in range(1,7):
-            if mp[cur+i] > mx:
-                mx = mp[cur+i]
-                cand = i
-        cur = mx
-        for _ in range(rnd-1):
-            ans.append(cand)
-            if extra_roll[cur] != 0:
-                ans.append(extra_roll[cur])
     return ans
 def build(n, jumps):
     kw = []
