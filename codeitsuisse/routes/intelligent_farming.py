@@ -63,7 +63,7 @@ def solve(s):
         if s[i] == 'G': G += 1
     mx = -1000000000
     cand = ""
-    for i in range(min(min(A,T),min(C,G))):
+    for i in range(min(min(A,T),min(C,G))+1):
         score, ans = compute(A,T,C,G,i)
         if score > mx:
             mx = score
