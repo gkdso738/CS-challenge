@@ -40,7 +40,6 @@ def formatting(s):
     for i in range(len(s)):
         sum = sum * 2
         if s[i] == 'Y': sum += 1
-        else: sum -= 1
     return sum 
 
 
