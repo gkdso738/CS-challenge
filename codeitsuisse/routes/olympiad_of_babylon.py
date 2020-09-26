@@ -32,7 +32,7 @@ def solve2(books, days):
     sum = 0
     ans = -1
     for i in range(len(days)):
-        sum += days[i]
+        sum += days[i] * 0.99
     for i in range(len(books)):
         if books[i] > sum:
             ans = i
