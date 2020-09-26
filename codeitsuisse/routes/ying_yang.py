@@ -52,6 +52,7 @@ def evaluate_ying_yang():
     n = data["number_of_elements"]
     k = data["number_of_operations"]
     s = data["elements"]      
-
+    val = formatting(s)
+    result = solve(val,k)
     # logging.info("My result :{}".format(result))
-    return jsonify({"answer": ans});
+    return jsonify(result);
