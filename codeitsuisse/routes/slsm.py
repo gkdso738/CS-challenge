@@ -69,7 +69,10 @@ def build(n, jumps):
         else:
             kw.append(x)
             if y == 0:
-                mp[x] = mp[x-1]
+                if x-1 in kw:
+                    mp[x] = mp[x-1]
+                else:
+                    mp[x] = x-1
                 extra_roll[x] = 1
             else:
                 mp[x] = y
