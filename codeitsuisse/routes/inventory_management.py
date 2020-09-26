@@ -53,7 +53,7 @@ def solve(target, a):
     return ans[:10]
     
 
-@app.route('/inventory_management', methods=['POST'])
+@app.route('/inventory-management', methods=['POST'])
 def evaluate_inventory_management():
     data = request.get_json();
     logging.info("data sent for evaluation {}".format(data))
