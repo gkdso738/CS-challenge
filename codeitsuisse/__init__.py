@@ -4,4 +4,4 @@ import codeitsuisse.routes.square
 import codeitsuisse.routes.sort
 import codeitsuisse.routes.revisitgeometry
 import codeitsuisse.routes.olympiad_of_babylon
-
+import codeitsuisse.routes.intelligent_farming 
