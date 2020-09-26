@@ -48,4 +48,4 @@ def evaluate_revisitgeometry():
     cood_y.append(cood_y[0])
     result = solve(len(cood_x)-1,a,b,c,cood_x,cood_y)
     logging.info("My result :{}".format(result))
-    return jsonify({"result": result});
+    return jsonify(result);
