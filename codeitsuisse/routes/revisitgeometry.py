@@ -9,7 +9,7 @@ from codeitsuisse import app;
 logger = logging.getLogger(__name__)
 
 def get_t(a,b,c,x,y,u,v):
-    if abs((a*(u-x) + b*(v-y))) < 1e-15: return np.nan
+    # if abs((a*(u-x) + b*(v-y))) < 1e-15: return np.nan
     return -(a*x + b*y + c) / (a*(u-x) + b*(v-y))
 
 def get_line(x,y,u,v):
@@ -17,7 +17,7 @@ def get_line(x,y,u,v):
 
 def get_intersect(a,b,c,x,y,u,v):
     t = get_t(a,b,c,x,y,u,v)
-    if not np.isnan(t) and t <= 1.0 and t >= 0:
+    if t <= 1.0 and t >= 0.0:
         return x + t * (u-x), y + t * (v-y)
     return np.nan, np.nan
 
