@@ -21,7 +21,7 @@ def to_int(bit_arr):
         ans = ans * 2 + bit_arr[i]
     return ans
 def solve(n,ln,k):
-    if ln > 20: return 0
+    if ln > 15: return 0
     dp = []
     for i in range(n+1):
         tmp = []
@@ -40,7 +40,7 @@ def solve(n,ln,k):
                     bit_arr.append(x % 2)
                     x = x // 2
                 sum = 0.0
-                for j in range(len(bit_arr)):
+                for j in range(u):
                     first = bit_arr[j] + dp[to_int(bit_arr[:j]+bit_arr[j+1:])][u-1][l-1]
                     x = u-j-1
                     second = bit_arr[x] + dp[to_int(bit_arr[:x]+bit_arr[x+1:])][u-1][l-1]
