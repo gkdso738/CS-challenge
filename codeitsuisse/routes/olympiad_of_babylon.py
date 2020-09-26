@@ -26,7 +26,17 @@ def solve(books, days):
         if days == [] or sum > days[len(days)-1]: return cur
         cur += 1
     return cur
-    
+
+def solve2(books, days):
+    books.sort()
+    sum = 0
+    for i in range(len(days)):
+        sum += days[i]
+    for i in range(len(books)):
+        if books[i] > sum:
+            return i
+        sum -= books[i]
+    return len(books)
 
 @app.route('/olympiad-of-babylon', methods=['POST'])
 def evaluate_salad_spree():
@@ -35,7 +45,7 @@ def evaluate_salad_spree():
     
     books = data["books"]
     days = data["days"]
-    result = solve(books,days)
+    result = solve2(books,days)
     
     logging.info("My result :{}".format(result))
     return jsonify({"optimalNumberOfBooks": result});
