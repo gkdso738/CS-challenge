@@ -20,19 +20,21 @@ def solve(n, mp, extra_roll, rnd):
                 mx = mp[cur+i]
                 cand = i
         if mx == n: break
+        tcur = cur + cand
         cur = mx
         for _ in range(rnd):
             ans.append(cand)
-            if extra_roll[cur] != 0:
-                ans.append(extra_roll[cur])
+            if extra_roll[tcur] != 0:
+                ans.append(extra_roll[tcur])
     tcur = cur
     for i in range(1,7):
         if mp[cur+i] != n:
+            tmp = cur+i
             cur = mp[cur+i]
             for _ in range(rnd-1):
                 ans.append(i)
-                if extra_roll[cur] != 0:
-                    ans.append(extra_roll[cur])
+                if extra_roll[tmp] != 0:
+                    ans.append(extra_roll[tmp])
             break
     for i in range(1,7):
         if mp[tcur+i] == n:
