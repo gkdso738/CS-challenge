@@ -34,7 +34,7 @@ def solve(n,k):
                 second = bit_arr[x] + dp[to_int(bit_arr[:x]+bit_arr[x+1:])][l-1]
                 sum += max(first,second)
             dp[i] = sum / len(bit_arr)
-    return dp[n]
+    return dp[n][k]
 def formatting(s):
     sum = 0
     for i in range(len(s)):
