@@ -10,6 +10,7 @@ logger = logging.getLogger(__name__)
 
 def compute(A,T,C,G,rnd):
     ans = ""
+    score = 0
     for i in range(rnd):
         if A > 2:
             ans = ans + "AA"
@@ -51,7 +52,6 @@ def compute(A,T,C,G,rnd):
     return score, ans
 
 def solve(s):
-    score = 0
     A = 0
     T = 0
     C = 0
