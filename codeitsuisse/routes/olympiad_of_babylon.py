@@ -45,7 +45,7 @@ def solve2(books, days):
         for i in range(len(days)):
             x = days[i]
             if subset == []: break
-            while x >= subset[len(subset)-1]:
+            while subset != [] and x >= subset[len(subset)-1]:
                 for j in range(len(subset)):
                     if x >= subset[j]:
                         x -= subset[j]
