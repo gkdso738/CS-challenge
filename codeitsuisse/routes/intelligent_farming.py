@@ -57,7 +57,7 @@ def solve(s):
     
 
 @app.route('/intelligent-farming', methods=['POST'])
-def evaluate_salad_spree():
+def evaluate_intelligent_farming():
     data = request.get_json();
     logging.info("data sent for evaluation {}".format(data))
     
