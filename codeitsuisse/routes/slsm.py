@@ -53,7 +53,7 @@ def build(n, jumps):
         y = int(y)
         if x == 0:
             kw.append(y)
-            mp[y] = y+6
+            mp[y] = mp[y-1]
         else:
             kw.append(x)
             if y == 0:
