@@ -32,13 +32,14 @@ def solve2(books, days):
     sum = 0
     ans = -1
     for i in range(len(days)):
-        sum += days[i]
+        sum += days[i] * 0.95
     for i in range(len(books)):
         if books[i] > sum:
             ans = i
             break
         sum -= books[i]
     if ans == -1: ans = len(books)
+    return ans
     for cand in range(ans, -1, -1):
         subset = books[:cand]
         subset.reverse()
