@@ -25,6 +25,7 @@ def solve(n, mp, extra_roll, rnd):
             ans.append(cand)
             if extra_roll[cur] != 0:
                 ans.append(extra_roll[cur])
+    tcur = cur
     for i in range(1,7):
         if mp[cur+i] != n:
             cur = mp[cur+i]
@@ -34,10 +35,10 @@ def solve(n, mp, extra_roll, rnd):
                     ans.append(extra_roll[cur])
             break
     for i in range(1,7):
-        if mp[cur+i] == n:
+        if mp[tcur+i] == n:
             ans.append(i)
-            if extra_roll[cur+i] != 0:
-                ans.append(extra_roll[cur+i])
+            if extra_roll[tcur+i] != 0:
+                ans.append(extra_roll[tcur+i])
             break
     while cur < n:
         mx = -1
