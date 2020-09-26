@@ -33,8 +33,8 @@ def solve(n,a,b,c,cood_x,cood_y):
 def evaluate_revisitgeometry():
     data = request.get_json();
     logging.info("data sent for evaluation {}".format(data))
-    st_x, st_y = data["lineCoordinates"]["x"], data["lineCoordinates"]["y"]
-    st_u, st_v = data["lineCoordinates"]["x"], data["lineCoordinates"]["y"]
+    st_x, st_y = data["lineCoordinates"][0]["x"], data["lineCoordinates"][0]["y"]
+    st_u, st_v = data["lineCoordinates"][1]["x"], data["lineCoordinates"][1]["y"]
     a,b,c = get_line(float(st_x),float(st_y),float(st_u),float(st_v))
     cood_x = []
     cood_y = []
