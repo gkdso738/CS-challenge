@@ -13,6 +13,8 @@ def solve(n, mp, rnd):
     ans = []
     cur = 1
     while cur+6 < n:
+        mx = -1
+        cand = 0
         for i in range(1,7):
             if mp[cur+i] > mx:
                 mx = mp[cur+i]
@@ -32,6 +34,8 @@ def solve(n, mp, rnd):
             ans.append(i)
             break
     while cur < n:
+        mx = -1
+        cand = 0
         for i in range(1,7):
             if mp[cur+i] > mx:
                 mx = mp[cur+i]
