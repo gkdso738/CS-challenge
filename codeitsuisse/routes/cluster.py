@@ -10,35 +10,32 @@ logger = logging.getLogger(__name__)
 
 gr = []
 vis = []
-n = 0
-m = 0
+
 
 def dfs(x, y):
-    global n, m, vis, gr
+    global vis, gr
     # print("dfs", x, y)
     vis[x][y] = 1
     dx = [0, 0, 1, -1, 1, 1, -1, -1]
     dy = [1, -1, 0, 0, 1, -1, 1, -1]
 
     for i in range(8):
-        if 0<=x+dx[i] and x+dx[i]<n and 0<=y+dy[i] and y+dy[i]<m:
+        if 0<=x+dx[i] and x+dx[i]<len(gr) and 0<=y+dy[i] and y+dy[i]<len(gr[0]):
             if gr[x+dx[i]][y+dy[i]] != "*" and vis[x+dx[i]][y+dy[i]] == 0:
                 dfs(x+dx[i], y+dy[i])
     
 
 def get_ans():
-    global n, m, vis, gr
-    n = len(gr)
-    m = len(gr[0])
-    for i in range(n):
+    global vis, gr
+    for i in range(len(gr)):
         temp = []
-        for j in range(m):
+        for j in range(len(gr[0])):
             temp.append(0)
         vis.append(temp)
         
     ans = 0
-    for i in range(n):
-        for j in range(m):
+    for i in range(len(gr)):
+        for j in range(len(gr[0])):
             if vis[i][j] == 0 and gr[i][j] == "1":
                 ans += 1
                 dfs(i, j)
@@ -50,19 +47,12 @@ def get_ans():
 @app.route('/cluster', methods=['POST'])
 def evaluate_cluster():
     
-    global n, m, gr
+    global gr,vis
     
     data = request.get_json();
     logging.info("data sent for evaluation {}".format(data))
-    
-    n = len(data)
-    m = len(data[0])
-    for i in range(n):
-        temp = []
-        for j in range(m):
-            temp.append(data[i][j])
-        gr.append(temp)
-    
+
+    gr = data
     result = get_ans()
     
     # logging.info("My result :{}".format(result))
