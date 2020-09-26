@@ -25,6 +25,7 @@ def solve(books, days):
         sum += books[cur]
         if days == [] or sum > days[len(days)-1]: return cur
         cur += 1
+    return cur
     
 
 @app.route('/olympiad-of-babylon', methods=['POST'])
