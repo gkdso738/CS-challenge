@@ -8,8 +8,8 @@ from codeitsuisse import app;
 
 logger = logging.getLogger(__name__)
 
-@app.route('/cluster', methods=['POST'])
-def evaluate_cluster():
+@app.route('/ying-yang', methods=['POST'])
+def evaluate_ying_yang():
     data = request.get_json();
     logging.info("data sent for evaluation {}".format(data))
     
