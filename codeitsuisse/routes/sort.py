@@ -18,4 +18,4 @@ def evaluate_sort():
     for i in range(20001):
         for j in range(cnt[i]):
             data[i] = i-10000
-    return jsonify(ans);
+    return jsonify(data);
