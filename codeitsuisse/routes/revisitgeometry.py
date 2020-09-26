@@ -17,7 +17,7 @@ def get_line(x,y,u,v):
 
 def get_intersect(a,b,c,x,y,u,v):
     t = get_t(a,b,c,x,y,u,v)
-    if not np.isnan(t) and t <= 1.0+1e-15 and t >= -1e-15:
+    if not np.isnan(t) and t <= 1.0 and t >= 0:
         return x + t * (u-x), y + t * (v-y)
     return np.nan, np.nan
 
