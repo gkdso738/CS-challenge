@@ -18,13 +18,13 @@ def get_intersect(a,b,c,x,y,u,v):
     t = get_t(a,b,c,x,y,u,v)
     if t <= 1.0 and t >= 0.0:
         return x + t * (u-x), y + t * (v-y)
-    return np.nan(), np.nan()
+    return np.nan, np.nan
 
 def solve(n,a,b,c,cood_x,cood_y):
     ans = []
     for i in range(n):
         x, y = get_intersect(a,b,c,cood_x[i],cood_y[i],cood_x[i+1],cood_y[i+1])
-        if x != np.nan():
+        if x != np.nan:
             ans.append({"x": x, "y": y})
     return ans
 
