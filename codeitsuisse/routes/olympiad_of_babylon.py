@@ -37,4 +37,4 @@ def evaluate_salad_spree():
     result = solve(books,days)
     
     logging.info("My result :{}".format(result))
-    return jsonify({"result": result});
+    return jsonify({"optimalNumberOfBooks": result});
