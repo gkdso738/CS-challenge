@@ -49,33 +49,45 @@ def build(n, jumps):
     extra_roll = {}
     for i in range(n+6):
         extra_roll[i] = 0
+    for i in range(n+1):
+        if i not in kw:
+            mp[i] = i
     for element in jumps:
         x,y = element.split(':')
         x = int(x)
         y = int(y)
+        if x > 0 and y > 0:
+            kw.append(x)
+            mp[x] = y
+    for element in jumps:
+        x,y = element.split(':')
+        x = int(x)
+        y = int(y)
+        if x > 0 and y > 0: continue
         if x == 0:
             kw.append(y)
-            mp[y] = y+6
-            extra_roll[y] = 6
+            mx = -1
+            cand = 0
+            for i in range(1,7):
+                if mp[y+i] > mx:
+                    mx = mp[y+i]
+                    cand = i
+            extra_roll[y] = cand
         else:
             kw.append(x)
-            if y == 0:
-                if x-1 in kw:
-                    mp[x] = mp[x-1]
-                else:
-                    mp[x] = x-1
-                extra_roll[x] = 1
-            else:
-                mp[x] = y
-    for i in range(n+1):
-        if i not in kw:
-            mp[i] = i
+            mx = -1
+            cand = 0
+            for i in range(1,7):
+                if mp[y+i] > mx:
+                    mx = mp[y+i]
+                    cand = i
+            extra_roll[y] = cand
 
     for i in range(n+1,n+6):
         mp[i] = mp[n+n-i]
         extra_roll[i] = extra_roll[n+n-i]
     for i in range(n+6):
-        if mp[i] != i and mp[mp[i]] != mp[i]:
+        if mp[mp[i]] != mp[i]:
             mp[i] = mp[mp[i]]
     return mp, extra_roll
 
