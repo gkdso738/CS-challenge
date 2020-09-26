@@ -21,7 +21,7 @@ def dfs(x, y):
 
     for i in range(8):
         if 0<=x+dx[i] and x+dx[i]<len(gr) and 0<=y+dy[i] and y+dy[i]<len(gr[0]):
-            if gr[x+dx[i]][y+dy[i]] != "*" and vis[x+dx[i]][y+dy[i]] == 0:
+            if gr[x+dx[i]][y+dy[i]] != '*' and vis[x+dx[i]][y+dy[i]] == 0:
                 dfs(x+dx[i], y+dy[i])
     
 
@@ -36,7 +36,7 @@ def get_ans():
     ans = 0
     for i in range(len(gr)):
         for j in range(len(gr[0])):
-            if vis[i][j] == 0 and gr[i][j] == "1":
+            if vis[i][j] == 0 and gr[i][j] == '1':
                 ans += 1
                 dfs(i, j)
                 
