@@ -23,7 +23,7 @@ def to_int(bit_arr):
 def solve(n,ln,k):
     if ln > 15: return 0
     dp = []
-    for i in range(n+1):
+    for i in range(int(2**ln)):
         tmp = []
         for l in range(ln+1):
             foo = []
@@ -33,7 +33,7 @@ def solve(n,ln,k):
         dp.append(tmp)
     for l in range(1,k+1):
         for u in range(1,ln+1):
-            for i in range(1,n+1):
+            for i in range(1,int(2**ln)):
                 bit_arr = []
                 x = i
                 for _ in range(u):
