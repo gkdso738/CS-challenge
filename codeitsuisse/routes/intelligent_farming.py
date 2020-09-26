@@ -12,7 +12,7 @@ def compute(A,T,C,G,rnd):
     ans = ""
     score = 0
     for i in range(rnd):
-        if A > 2:
+        if A > 2+rnd-i:
             ans = ans + "AA"
             A -= 2
         ans = ans + "TACG"
