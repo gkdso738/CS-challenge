@@ -3,5 +3,5 @@ app = Flask(__name__)
 import codeitsuisse.routes.square
 import codeitsuisse.routes.sort
 import codeitsuisse.routes.revisitgeometry
-import codeitsuisse.routes.olympiad-of-babylon
+import codeitsuisse.routes.olympiad_of_babylon
 
