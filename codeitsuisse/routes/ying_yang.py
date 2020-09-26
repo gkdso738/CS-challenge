@@ -21,6 +21,7 @@ def to_int(bit_arr):
         ans = ans * 2 + bit_arr[i]
     return ans
 def solve(n,ln,k):
+    if ln > 20: return 0
     dp = []
     for i in range(n+1):
         tmp = []
