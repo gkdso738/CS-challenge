@@ -40,7 +40,8 @@ def solve2(books, days):
         sum -= books[i]
     if ans == -1: ans = len(books)
     for cand in range(ans, -1, -1):
-        subset = books[:i].reverse()
+        subset = books[:i]
+        susbet.reverse()
         for i in range(len(days)):
             x = days[i]
             for j in range(len(subset)):
