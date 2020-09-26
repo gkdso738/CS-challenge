@@ -34,6 +34,11 @@ def compute(A,T,C,G,rnd):
         A -= 2
         ans = ans + "T"
         T -= 1
+    while A > 2 and C > 0:
+        ans = ans + "AA"
+        A -= 2
+        ans = ans + "C"
+        C -= 1
     while A > 2 and G > 0:
         ans = ans + "AA"
         A -= 2
@@ -42,6 +47,9 @@ def compute(A,T,C,G,rnd):
     while T > 0:
         ans = ans + "T"
         T -= 1
+    while C > 0:
+        ans = ans + "C"
+        C -= 1
     while G > 0:
         ans = ans + "G"
         G -= 1
