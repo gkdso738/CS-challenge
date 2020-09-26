@@ -93,7 +93,7 @@ def evaluate_slsm():
 
     n = data["boardSize"]
     rnd = data["players"]
-    mp = build(n,data["jumps"])
+    mp,extra_roll = build(n,data["jumps"])
     result = solve(n,mp,extra_roll,rnd)
 
     # logging.info("My result :{}".format(result))
