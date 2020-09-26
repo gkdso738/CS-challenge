@@ -54,7 +54,7 @@ def formatting(s):
     return sum
 
 
-@app.route('/ying-yang', methods=['POST'])
+@app.route('/yin-yang', methods=['POST'])
 def evaluate_ying_yang():
     data = request.get_json();
     logging.info("data sent for evaluation {}".format(data))
