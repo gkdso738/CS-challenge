@@ -45,6 +45,7 @@ def solve(n, mp, extra_roll, rnd):
     return ans
 def build(n, jumps):
     kw = []
+    reroll = []
     mp = {}
     extra_roll = {}
     for i in range(n+6):
@@ -60,8 +61,8 @@ def build(n, jumps):
             kw.append(x)
             mp[x] = y
         else:
-            kw.append(x)
-            kw.append(y)
+            reroll.append(x)
+            reroll.append(y)
     for element in jumps:
         x,y = element.split(':')
         x = int(x)
@@ -72,7 +73,7 @@ def build(n, jumps):
             mx = -1
             cand = 0
             for i in range(1,7):
-                #if y + i in kw: continue
+                if y + i in reroll: continue
                 if mp[y+i] > mx:
                     mx = mp[y+i]
                     cand = i
@@ -82,7 +83,7 @@ def build(n, jumps):
             mx = -1
             cand = 0
             for i in range(1,7):
-                #if x + i in kw: continue
+                if x - i in reroll: continue
                 if mp[x-i] > mx:
                     mx = mp[x-i]
                     cand = i
