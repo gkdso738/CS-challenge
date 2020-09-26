@@ -59,6 +59,9 @@ def build(n, jumps):
         if x > 0 and y > 0:
             kw.append(x)
             mp[x] = y
+        else:
+            kw.append(x)
+            kw.append(y)
     for element in jumps:
         x,y = element.split(':')
         x = int(x)
@@ -69,6 +72,7 @@ def build(n, jumps):
             mx = -1
             cand = 0
             for i in range(1,7):
+                #if y + i in kw: continue
                 if mp[y+i] > mx:
                     mx = mp[y+i]
                     cand = i
@@ -78,10 +82,11 @@ def build(n, jumps):
             mx = -1
             cand = 0
             for i in range(1,7):
-                if mp[y+i] > mx:
-                    mx = mp[y+i]
+                #if x + i in kw: continue
+                if mp[x+i] > mx:
+                    mx = mp[x+i]
                     cand = i
-            extra_roll[y] = cand
+            extra_roll[x] = cand
 
     for i in range(n+1,n+6):
         mp[i] = mp[n+n-i]
