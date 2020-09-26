@@ -62,7 +62,7 @@ def evaluate_inventory_management():
     a = data["items"]
     result = {"searchItemName": target, "searchResult": []}
     temp = solve(target.lower(), a)
-    for i in range(len(ans)):
-      result["searchResult"].append(ans[i][1])
+    for i in range(len(temp)):
+      result["searchResult"].append(temp[i][1])
     logging.info("My result :{}".format(result))
     return jsonify(result);
