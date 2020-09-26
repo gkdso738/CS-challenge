@@ -73,7 +73,7 @@ def build(n, jumps):
             mx = -1
             cand = 0
             for i in range(1,7):
-                if (y+i) in reroll or (y+i) in kw: continue
+                if (y+i) in reroll: continue
                 if mp[y+i] > mx:
                     mx = mp[y+i]
                     cand = i
@@ -83,7 +83,7 @@ def build(n, jumps):
             mx = -1
             cand = 0
             for i in range(1,7):
-                if (x-i) in reroll or (x-i) in kw: continue
+                if (x-i) in reroll: continue
                 if mp[x-i] > mx:
                     mx = mp[x-i]
                     cand = i
