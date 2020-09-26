@@ -35,16 +35,16 @@ def solve(n,ln,k):
             for i in range(1,n+1):
                 bit_arr = []
                 x = i
-                while x > 0:
+                for _ in range(u):
                     bit_arr.append(x % 2)
                     x = x // 2
                 sum = 0.0
                 for j in range(len(bit_arr)):
                     first = bit_arr[j] + dp[to_int(bit_arr[:j]+bit_arr[j+1:])][u-1][l-1]
-                    x = len(bit_arr)-j-1
+                    x = u-j-1
                     second = bit_arr[x] + dp[to_int(bit_arr[:x]+bit_arr[x+1:])][u-1][l-1]
                     sum += max(first,second)
-                dp[i][u][l] = sum / len(bit_arr)
+                dp[i][u][l] = sum / u
     return dp[n][ln][k]
 def formatting(s):
     sum = 0
