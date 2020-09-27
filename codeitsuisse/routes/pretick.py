@@ -13,7 +13,7 @@ def read(ln):
     lines = ln.split('\n')
     for i in range(len(lines)):
         lines[i] = lines[i].split(',')
-    #lines.remove(lines[len(lines)-1])
+    lines.remove(lines[len(lines)-1])
     return lines
 
 def last_px(lines):
