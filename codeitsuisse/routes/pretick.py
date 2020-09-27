@@ -1,7 +1,6 @@
 import logging
 import json
 import numpy as np
-import pandas as pd
 
 from flask import request, jsonify;
 
@@ -16,18 +15,17 @@ def read(ln):
         lines[i] = lines[i].split(',')
     columns = lines[0]
     lines.remove(lines[0])
-    df = pd.DataFrame(lines, columns=columns)
-    return df
+    return lines
 
-def last_px(df):
-    return df.loc[len(df)-1,'Close']
+def last_px(lines):
+    return lines[len(lines)-1][3]
 
 @app.route('/pre-tick', methods=['POST'])
 def evaluate_pretick():
     data = request.get_json();
     logging.info("data sent for evaluation {}".format(data))
 
-    df = read(data)
+    lines = read(data)
     result = last_px(df)
     # logging.info("My result :{}".format(result))
     return jsonify(result);
