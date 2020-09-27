@@ -13,7 +13,7 @@ def read(ln):
     lines = ln.split('\n')
     for i in range(len(lines)):
         lines[i] = lines[i].split(',')
-    lines.remove(lines[len(lines)-1])
+    #lines.remove(lines[len(lines)-1])
     return lines
 
 def last_px(lines):
@@ -25,7 +25,7 @@ def evaluate_pretick():
     #logging.info("data sent for evaluation {}".format(data))
 
     lines = read(data.decode())
-    #logging.info("data sent for evaluation {}".format(lines))
+    logging.info("data sent for evaluation {}".format(lines))
     result = last_px(lines)
-    # logging.info("My result :{}".format(result))
+    logging.info("My result :{}".format(result))
     return jsonify(result);
