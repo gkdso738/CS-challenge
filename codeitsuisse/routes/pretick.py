@@ -25,7 +25,7 @@ def evaluate_pretick():
     data = request.get_data();
     logging.info("data sent for evaluation {}".format(data))
 
-    lines = read(str(data))
+    lines = read(data.decode())
     logging.info("data sent for evaluation {}".format(lines))
     result = last_px(lines)
     # logging.info("My result :{}".format(result))
