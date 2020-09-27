@@ -26,6 +26,6 @@ def evaluate_pretick():
     logging.info("data sent for evaluation {}".format(data))
 
     lines = read(data)
-    result = last_px(df)
+    result = last_px(lines)
     # logging.info("My result :{}".format(result))
     return jsonify(result);
