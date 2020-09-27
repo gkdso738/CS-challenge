@@ -22,7 +22,7 @@ def last_px(lines):
 
 @app.route('/pre-tick', methods=['POST'])
 def evaluate_pretick():
-    data = request.get();
+    data = request.get_data();
     logging.info("data sent for evaluation {}".format(data))
 
     lines = read(data)
