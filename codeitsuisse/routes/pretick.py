@@ -17,7 +17,7 @@ def read(ln):
     return lines
 
 def last_px(lines):
-    return lines[len(lines)-1][3]
+    return float(lines[len(lines)-1][3].strip())
 
 @app.route('/pre-tick', methods=['POST'])
 def evaluate_pretick():
