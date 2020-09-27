@@ -22,10 +22,10 @@ def last_px(lines):
 @app.route('/pre-tick', methods=['POST'])
 def evaluate_pretick():
     data = request.get_data();
-    logging.info("data sent for evaluation {}".format(data))
+    #logging.info("data sent for evaluation {}".format(data))
 
     lines = read(data.decode())
-    logging.info("data sent for evaluation {}".format(lines))
+    #logging.info("data sent for evaluation {}".format(lines))
     result = last_px(lines)
     # logging.info("My result :{}".format(result))
     return jsonify(result);
